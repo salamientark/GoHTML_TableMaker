@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <form action="/zbeub" method="post" class="form-example">
+      <input type="text" id="tableau" name="avatar"/> <br/>
+      <input type="submit" value="send text"/>
+    </form>
+    <form action="/namek" method="post" class="form_file" enctype="multipart/form-data">
+        <input type="file" id="BOM" name="file_bom"/> <br/>
+        <input type="submit"  value="send file"/>
+    </form>
+    <table>
+        <tbody>
+            {{ range $row := .Records }}
+            <tr>
+                {{ range $cell := $row }}
+                    <td> {{ $cell}} </td>
+                {{ end }}
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">The table header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>The table body</td>
+        <td>with two columns</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
